@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pixel Positions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-lvh bg-black text-white">
-    <div class="px-10 py-4">
-        <x-navigation-menu/>
-        <main class="mt-10 max-w-[960px] mx-auto">
-            {{ $slot }}
-        </main>
-    </div>
+<body class="min-h-lvh bg-black text-white px-10 py-4 font-hanken-grotesk">
+    <x-navigation-menu/>
+    <main class="mt-10 max-w-[960px] mx-auto">
+        {{ $slot }}
+    </main>
 </body>
 </html>

@@ -2,13 +2,16 @@
     <div class="space-y-10">
         <section class="text-center pt-6">
             <h2 class="text-5xl font-bold text-center">
-                <label for="query">Let's Find You a Great Job</label>
+                <label for="q">Let's Find You a Great Job</label>
             </h2>
-            <form class="mt-6">
-                <input type="text" id="query" name="query"
-                       placeholder="I'm looking for..."
-                       class="w-full max-w-2xl bg-white/5 p-5 rounded-xl border border-white/10 placeholder-gray-500">
-            </form>
+            <x-forms.form action="/search" class="mt-6">
+                <x-forms.input
+                    class="w-full max-w-2xl bg-white/5 p-5 rounded-xl border border-white/10 placeholder-gray-500"
+                    placeholder="SR Sales Agent..."
+                    name="q"
+                    :label='false'
+                    required/>
+            </x-forms.form>
         </section>
 
         <section class="pt-10">

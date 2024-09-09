@@ -16,7 +16,7 @@ class Job extends Model
         return $this->belongsTo(Employer::class);
     }
 
-    public function tag(string $name)
+    public function tag(string $name): void
     {
         $tag = Tag::firstOrCreate(['name' => $name]);
 

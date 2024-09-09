@@ -17,12 +17,14 @@ class JobSeeder extends Seeder
     {
         $tags = Tag::factory(3)->create();
 
-        Job::factory(10)->hasAttached($tags)->create(new Sequence([
-            'featured' => false,
-            'schedule' => 'Full Time'
-        ], [
-            'featured' => True,
-            'schedule' => 'Part Time'
-        ]));
+        Job::factory(10)
+            ->hasAttached($tags)
+            ->create(new Sequence([ // split the created data with these values
+                'featured' => false,
+                'schedule' => 'Full Time'
+            ], [
+                'featured' => True,
+                'schedule' => 'Part Time'
+            ]));
     }
 }

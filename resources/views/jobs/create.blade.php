@@ -14,7 +14,7 @@
 
         <x-forms.divider/>
 
-        <x-forms.input label="Tags (comma separated)" name="tags" placeholder="laracasts, video, education" required/>
+        <x-forms.input label="Tags (comma separated)" name="tags" placeholder="laracasts, video, education"/>
         <x-forms.button class="block mx-auto">Post</x-forms.button>
     </x-forms.form>
 </x-layout>

@@ -40,8 +40,10 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreJobRequest $request)
     {
+        $exclude = ['tags', '_token', '_method'];
+
         $attributes = $request->validate([
             'title' => ['required'],
             'salary' => ['required'],
@@ -53,7 +55,7 @@ class JobController extends Controller
 
         $attributes['featured'] = $request->has('featured');
 
-        $job = Auth::user()->employer->jobs()->create($request->except(['tags', '_token', '_method']));
+        $job = Auth::user()->employer->jobs()->create($request->except($exclude));
 
         if ($attributes['tags'] ?? false) {
             $tags = explode(',', $attributes['tags']);
